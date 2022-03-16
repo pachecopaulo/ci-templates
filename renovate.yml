@@ -18,6 +18,4 @@
   only:
     - master
     - schedules
-
-Renovate:
-  extends: .renovate
+    - ENG-4754
