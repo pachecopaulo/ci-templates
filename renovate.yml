@@ -9,7 +9,6 @@
     entrypoint: [""]
   script:    
     - >
-      echo "PAT: ${RENOVATE_TOKEN}" 
       renovate
       --platform "gitlab"
       --endpoint "${CI_API_V4_URL}"
