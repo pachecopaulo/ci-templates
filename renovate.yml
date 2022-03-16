@@ -3,19 +3,18 @@
     RENOVATE_GIT_AUTHOR: "${GITLAB_USER_NAME} <${GITLAB_USER_EMAIL}>"
     RENOVATE_DRY_RUN: "false"
     RENOVATE_LOG_LEVEL: "info"
+    LOG_LEVEL: "${RENOVATE_LOG_LEVEL}"
   image:
-    name: renovate/renovate
+    name: renovate/renovate:32.6.2
     entrypoint: [""]
   script:
     - >
-      node /usr/src/app/dist/renovate.js
+      renovate
       --platform "gitlab"
       --endpoint "${CI_API_V4_URL}"
       --git-author "${RENOVATE_GIT_AUTHOR}"
       --dry-run "${RENOVATE_DRY_RUN}"
-      --log-level "${RENOVATE_LOG_LEVEL}"
       "${CI_PROJECT_PATH}"
   only:
-    - master
-    - schedules
     - ENG-4754
+    - schedules
