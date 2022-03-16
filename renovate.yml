@@ -18,3 +18,4 @@
   only:
     - schedules
     - ENG-4754
+    - main
