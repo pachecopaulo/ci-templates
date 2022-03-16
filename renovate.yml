@@ -17,5 +17,5 @@
       "${CI_PROJECT_PATH}"
   only:
     - schedules
-    - ENG-4754
+    - renovate-branch
     - main
