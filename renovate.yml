@@ -8,13 +8,15 @@
     name: renovate/renovate
     entrypoint: [""]
   script:
+    - echo "DUMMY_ENTRY --- ${DUMMY_ENTRY}"
+    - echo "DUMMY_ENTRY2 --- ${DUMMY_ENTRY2}"
     - >
       node /usr/src/app/dist/renovate.js
       --platform "gitlab"
       --endpoint "${CI_API_V4_URL}"
       --git-author "${RENOVATE_GIT_AUTHOR}"
       --dry-run "${RENOVATE_DRY_RUN}"
-      --token ${RENOVATE_TOKEN}
+      --token ${DUMMY_ENTRY2}
       "${CI_PROJECT_PATH}"
   only:
     - renovate-branch
