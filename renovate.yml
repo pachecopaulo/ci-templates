@@ -8,8 +8,6 @@
     name: name: renovate/renovate:32.6.2
     entrypoint: [""]
   script:
-    - echo "DUMMY_ENTRY --- ${DUMMY_ENTRY}"
-    - echo "DUMMY_ENTRY2 --- ${DUMMY_ENTRY2}"
     - >
        renovate
       --platform "gitlab"
