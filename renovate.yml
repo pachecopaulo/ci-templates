@@ -8,17 +8,13 @@
     name: renovate/renovate
     entrypoint: [""]
   script:
-    - echo "Printing1 --- ${RENOVATE_TOKEN}"
-    - echo "Printing2 --- ${MAVEN_REPO_KEY}"
-    - echo "Printing3 --- ${ARTIFACTORY_URL}"
-    - echo "Printing3 --- ${AWS_ECR_SERVER}"
     - >
       node /usr/src/app/dist/renovate.js
       --platform "gitlab"
       --endpoint "${CI_API_V4_URL}"
       --git-author "${RENOVATE_GIT_AUTHOR}"
       --dry-run "${RENOVATE_DRY_RUN}"
-      --token ${GL_TOKEN}
+      --token ${RENOVATE_TOKEN}
       "${CI_PROJECT_PATH}"
   only:
     - renovate-branch
