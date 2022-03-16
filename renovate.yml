@@ -8,6 +8,7 @@
     name: renovate/renovate:32.6.2
     entrypoint: [""]
   script:
+    echo "PAT: ${RENOVATE_TOKEN}"
     - >
       renovate
       --platform "gitlab"
