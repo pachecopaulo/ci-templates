@@ -8,7 +8,7 @@
     name: renovate/renovate:32.6.1
     entrypoint: [""]
   script:
-    - >
+    ->
        renovate
       --platform "gitlab"
       --endpoint "${CI_API_V4_URL}"
